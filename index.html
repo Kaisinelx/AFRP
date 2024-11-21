@@ -22,12 +22,12 @@
                 <input id="name" type="text" placeholder="Character Name">
             </div>
             <div class="detail-item">
-                <label for="race">Race:</label>
-                <input id="race" type="text" placeholder="Human, Elf, etc.">
+                <label for="race">Faction:</label>
+                <input id="race" type="text" placeholder="Asmodian, Elyos, etc.">
             </div>
             <div class="detail-item">
-                <label for="career">Career Path:</label>
-                <input id="career" type="text" placeholder="Career Path">
+                <label for="career">Class Path:</label>
+                <input id="career" type="text" placeholder="Class Path">
             </div>
         </div>
 <!-- Personal Details Section -->
@@ -36,7 +36,7 @@
     <div class="details-grid">
         <div class="detail-item">
             <label for="gender">Gender:</label>
-            <input id="gender" type="text" placeholder="Male/Female">
+            <input id="gender" type="text" placeholder="Male/Female/Nonbinary/Genderfluid etc.">
         </div>
         <div class="detail-item">
             <label for="age">Age:</label>
@@ -44,7 +44,7 @@
         </div>
         <div class="detail-item">
             <label for="dateOfBirth">Date of Birth:</label>
-            <input id="dateOfBirth" type="text" placeholder="DD/MM/YYYY">
+            <input id="dateOfBirth" type="text" placeholder="Era">
         </div>
         <div class="detail-item">
             <label for="birthplace">Birthplace:</label>
@@ -59,20 +59,18 @@
             <input id="religion" type="text" placeholder="Religion">
         </div>
         <div class="detail-item">
-            <label for="height">Height:</label>
-            <input id="height" type="text" placeholder="e.g., 6'0">
+            <label>Height & Weight:</label>
+            <div class="inline-fields">
+                <input id="height" type="text" placeholder="Height (e.g., 180cm)">
+                <input id="weight" type="text" placeholder="Weight (e.g., 80kg)">
+            </div>
         </div>
         <div class="detail-item">
-            <label for="weight">Weight:</label>
-            <input id="weight" type="text" placeholder="e.g., 150 lbs">
-        </div>
-        <div class="detail-item">
-            <label for="eyes">Eyes:</label>
-            <input id="eyes" type="text" placeholder="Eye Color">
-        </div>
-        <div class="detail-item">
-            <label for="hair">Hair:</label>
-            <input id="hair" type="text" placeholder="Hair Color">
+            <label>Eyes & Hair:</label>
+            <div class="inline-fields">
+                <input id="eyes" type="text" placeholder="Eye Color">
+                <input id="hair" type="text" placeholder="Hair Color">
+            </div>
         </div>
         <div class="detail-item full-width">
             <label for="marks">Distinguishing Marks:</label>
@@ -81,96 +79,303 @@
     </div>
 </div>
 
-        <!-- Primary and Secondary Profiles -->
-        <div class="primary-profile">
-            <h3>Primary Profile</h3>
-            <table>
-                <thead>
+<div class="character-profile-section">
+    <h3 class="profile-section-title">Character Profile</h3>
+
+    <!-- Main Profile -->
+    <div class="profile-container">
+        <h4 class="profile-header">Main</h4>
+        <table class="profile-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Weapon Skill</th>
+                    <th>Ballistic Skill</th>
+                    <th>Strength</th>
+                    <th>Toughness</th>
+                    <th>Agility</th>
+                    <th>Intelligence</th>
+                    <th>Affinity</th>
+                    <th>Fellowship</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Starting</td>
+                    <td><input type="number" class="main-starting" data-attr="ws" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="bs" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="s" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="t" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="ag" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="int" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="aff" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="fel" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Advance</td>
+                    <td><input type="number" class="main-advance" data-attr="ws" value="0"></td>
+                    <td><input type="number" class="main-advance" data-attr="bs" value="0"></td>
+                    <td><input type="number" class="main-advance" data-attr="s" value="0"></td>
+                    <td><input type="number" class="main-advance" data-attr="t" value="0"></td>
+                    <td><input type="number" class="main-advance" data-attr="ag" value="0"></td>
+                    <td><input type="number" class="main-advance" data-attr="int" value="0"></td>
+                    <td><input type="number" class="main-advance" data-attr="aff" value="0"></td>
+                    <td><input type="number" class="main-advance" data-attr="fel" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Current</td>
+                    <td><input type="number" class="main-current" data-attr="ws" value="0" readonly></td>
+                    <td><input type="number" class="main-current" data-attr="bs" value="0" readonly></td>
+                    <td><input type="number" class="main-current" data-attr="s" value="0" readonly></td>
+                    <td><input type="number" class="main-current" data-attr="t" value="0" readonly></td>
+                    <td><input type="number" class="main-current" data-attr="ag" value="0" readonly></td>
+                    <td><input type="number" class="main-current" data-attr="int" value="0" readonly></td>
+                    <td><input type="number" class="main-current" data-attr="aff" value="0" readonly></td>
+                    <td><input type="number" class="main-current" data-attr="fel" value="0" readonly></td>
+                </tr>
+                <tr>
                     <tr>
-                        <th>WS</th>
-                        <th>BS</th>
-                        <th>STR</th>
-                        <th>T</th>
-                        <th>AG</th>
-                        <th>INT</th>
-                        <th>AFF</th>
-                        <th>FEL</th>
+                        <td>Checkboxes</td>
+                        <td>
+                            <div class="checkbox-group">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="checkbox-group">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="checkbox-group">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="checkbox-group">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="checkbox-group">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="checkbox-group">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="checkbox-group">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="checkbox-group">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                                <input type="checkbox">
+                            </div>
+                        </td>
                     </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="number" id="weaponSkill" placeholder="0"></td>
-                        <td><input type="number" id="ballisticSkill" placeholder="0"></td>
-                        <td><input type="number" id="strength" placeholder="0"></td>
-                        <td><input type="number" id="toughness" placeholder="0"></td>
-                        <td><input type="number" id="agility" placeholder="0"></td>
-                        <td><input type="number" id="intelligence" placeholder="0"></td>
-                        <td><input type="number" id="affinity" placeholder="0"></td>
-                        <td><input type="number" id="fellowship" placeholder="0"></td>
-                    </tr>
-                </tbody>
-            </table>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Secondary Profile -->
+    <div class="profile-container">
+        <h4 class="profile-header">Secondary</h4>
+        <table class="profile-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Attacks</th>
+                    <th>Wounds</th>
+                    <th>Power</th>
+                    <th>Defense</th>
+                    <th>Movement</th>
+                    <th>Aether</th>
+                    <th>Corruption</th>
+                    <th>Fortune</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Starting</td>
+                    <td><input type="number" class="main-starting" data-attr="ws" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="bs" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="s" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="t" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="ag" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="int" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="aff" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="fel" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Advance</td>
+                    <td><input type="number" class="main-advance" data-attr="a" value="0" ></td>
+                    <td><input type="number" class="main-advance" data-attr="w" value="0" ></td>
+                    <td><input type="number" class="main-advance" data-attr="pow" value="0" ></td>
+                    <td><input type="number" class="main-advance" data-attr="def" value="0" ></td>
+                    <td><input type="number" class="main-advance" data-attr="m" value="0" ></td>
+                    <td><input type="number" class="main-advance" data-attr="ae" value="0" ></td>
+                    <td><input type="number" class="main-advance" data-attr="cp" value="0" ></td>
+                    <td><input type="number" class="main-advance" data-attr="fp" value="0" ></td>
+                </tr>
+                <tr>
+                    <td>Current</td>
+                    <td><input type="number" class="main-current" data-attr="a" value="0" readonly></td>
+                    <td><input type="number" class="main-current" data-attr="w" value="0" readonly></td>
+                    <td><input type="number" class="main-current" data-attr="pow" value="0" readonly></td>
+                    <td><input type="number" class="main-current" data-attr="def" value="0" readonly></td>
+                    <td><input type="number" class="main-current" data-attr="m" value="0" readonly></td>
+                    <td><input type="number" class="main-current" data-attr="ae" value="0" readonly></td>
+                    <td><input type="number" class="main-current" data-attr="cp" value="0" readonly></td>
+                    <td><input type="number" class="main-current" data-attr="fp" value="0" readonly></td>
+                </tr>
+                <tr>
+                    <td>Checkboxes</td>
+                    <td><div class="checkbox-group"><input type="checkbox"><input type="checkbox"></div></td>
+                    <td><div class="checkbox-group"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"></div></td>
+                    <td><div class="checkbox-group"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"></div></td>
+                    <td><div class="checkbox-group"></div></td>
+                    <td><div class="checkbox-group"><input type="checkbox"></div></td>
+                    <td><div class="checkbox-group"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox"></div></td>
+                    <td>
+                        <div class="checkbox-group">
+                            <input type="checkbox">
+                            <input type="checkbox">
+                            <input type="checkbox">
+                            <input type="checkbox">
+                            <input type="checkbox">
+                            <input type="checkbox">
+                            <input type="checkbox">
+                            <input type="checkbox">
+                            <input type="checkbox">
+                        </div>
+                    </td>
+                    <td><div class="checkbox-group"><input type="checkbox"><input type="checkbox"><input type="checkbox"></div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+      <!-- Talents & Acquisitions Section -->
+<div class="talents-section">
+    <h3 class="talents-header">
+        <span class="header-icon">✒️</span> Talents & Acquisitions
+        <hr class="header-divider">
+    </h3>
+    <!-- Tab Buttons -->
+    <div class="tabs">
+        <button class="tab-button active" data-tab="talents">Talents</button>
+        <button class="tab-button" data-tab="acquisitions">Acquisitions</button>
+    </div>
+    <!-- Talents Table -->
+    <div class="tab-content active" id="talents">
+        <div class="table-controls">
+            <button id="add-row-talents" class="action-button">Add Row</button>
+            <button id="remove-row-talents" class="action-button">Remove Row</button>
         </div>
-        
-        <div class="secondary-profile">
-            <h3>Secondary Profile</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>A</th>
-                        <th>W</th>
-                        <th>POW</th>
-                        <th>DEF</th>
-                        <th>M</th>
-                        <th>AE</th>
-                        <th>CP</th>
-                        <th>FP</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="number" id="attacks" placeholder="0"></td>
-                        <td><input type="number" id="wounds" placeholder="0"></td>
-                        <td><input type="number" id="power" placeholder="0"></td>
-                        <td><input type="number" id="defense" placeholder="0"></td>
-                        <td><input type="number" id="movement" placeholder="0"></td>
-                        <td><input type="number" id="aetheric" placeholder="0"></td>
-                        <td><input type="number" id="chaosPoints" placeholder="0"></td>
-                        <td><input type="number" id="fatePoints" placeholder="0"></td>
-                    </tr>
-                </tbody>
-            </table>
+        <table class="talents-table">
+            <thead>
+                <tr>
+                    <th>Talent</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" placeholder="Enter Talent"></td>
+                    <td><input type="text" placeholder="Enter Description"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- Acquisitions Table -->
+    <div class="tab-content" id="acquisitions">
+        <div class="table-controls">
+            <button id="add-row-acquisitions" class="action-button">Add Row</button>
+            <button id="remove-row-acquisitions" class="action-button">Remove Row</button>
         </div>
-        <!-- Talents & Knowledges Section -->
-        <div class="talents-section">
-            <h3 class="talents-header">
-                <span class="header-icon">✒️</span> Talents & Knowledges
-                <hr class="header-divider">
-            </h3>
-            <table class="talents-table">
-                <thead>
-                    <tr>
-                        <th>ACQUISITION</th>
-                        <th>DESCRIPTION</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><input type="text" placeholder="Enter Acquisition"></td>
-                        <td><input type="text" placeholder="Enter Description"></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" placeholder="Enter Acquisition"></td>
-                        <td><input type="text" placeholder="Enter Description"></td>
-                    </tr>
-                    <div class="talents-actions">
-                        <button id="add-row" class="action-button">Add Row</button>
-                        <button id="remove-row" class="action-button">Remove Row</button>
-                    </div>
-                    
-                </tbody>
-            </table>
-        </div>
+        <table class="acquisition-table">
+            <thead>
+                <tr>
+                    <th>Acquisition</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" placeholder="Enter Acquisition"></td>
+                    <td><input type="text" placeholder="Enter Description"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
        <!-- Skills Section -->
 <div class="skills-section">

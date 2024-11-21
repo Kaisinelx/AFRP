@@ -65,6 +65,7 @@ body {
     font-size: 14px;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+/* Personal Details Section */
 .personal-details {
     margin-bottom: 20px;
     padding: 15px;
@@ -84,12 +85,14 @@ body {
     padding-bottom: 5px;
 }
 
+/* Grid Layout */
 .details-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr); /* Two-column layout */
     gap: 10px;
 }
 
+/* Detail Items */
 .detail-item {
     display: flex;
     flex-direction: column;
@@ -112,58 +115,134 @@ body {
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+/* Full-Width Fields for Larger Inputs */
 .detail-item.full-width {
     grid-column: span 2; /* Span full width of the grid */
 }
+
+/* Inline Fields for Combined Inputs */
+.inline-fields {
+    display: flex;
+    gap: 5px; /* Space between combined inputs */
+}
+
+.inline-fields input {
+    flex: 1; /* Make inputs share equal space */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .details-grid {
+        grid-template-columns: 1fr; /* Switch to single column layout */
+    }
+}
+
 /* Profiles */
-.primary-profile, .secondary-profile {
+/* Character Profile Section */
+.character-profile-section {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #8b4513;
+    border-radius: 12px;
+    background: linear-gradient(to bottom, #fdf5e6, #faf3e6);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section-title {
+    font-family: 'Georgia', serif;
+    color: #4b2e02;
+    text-transform: uppercase;
+    text-align: center;
     margin-bottom: 20px;
 }
 
-.primary-profile h3, .secondary-profile h3 {
+.profile-header {
     font-size: 18px;
-    margin-bottom: 10px;
+    font-weight: bold;
     color: #4b2e02;
+    margin-bottom: 10px;
 }
 
-table {
+/* Character Profile Table */
+.profile-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
-    background-color: #faf3e6;
+    margin: 10px 0;
+    table-layout: fixed; /* Ensures columns have uniform width */
 }
 
-table th, table td {
-    border: 2px solid #8b4513;
-    padding: 5px;
-    text-align: center;
-    font-size: 14px;
-}
-
-table th {
-    background-color: #cfa67e; /* Slightly darker than current for contrast */
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #4b2e02;
-    padding: 14px; /* Increase padding for better readability */
-}
-
-table td input {
-    width: 60px; /* Smaller width for proportional inputs */
-    height: 25px; /* Adjust height for smaller boxes */
-    padding: 4px;
-    font-size: 14px;
-    text-align: center;
+.profile-table th,
+.profile-table td {
     border: 1px solid #8b4513;
-    border-radius: 3px;
+    padding: 4px; /* Compact padding */
+    text-align: center;
+    vertical-align: middle;
+}
+
+.profile-table th {
+    background-color: #8b4513;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 11px; /* Compact header text */
+    padding: 8px;
+}
+
+.profile-table td input[type="number"] {
+    width: 85%; /* Proportional width for compact fit */
+    padding: 4px;
+    font-size: 12px; /* Smaller input font for compactness */
+    border: 1px solid #8b4513;
+    border-radius: 4px;
+    text-align: center;
+    box-sizing: border-box;
     background-color: #fff8dc;
 }
-table td {
-    height: 40px; /* Reduce row height for compact layout */
+
+/* Checkbox Group Styling */
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(3, auto); /* 3 checkboxes per row */
+    gap: 2px 4px; /* Spacing between rows and columns */
+    justify-content: center; /* Center-align the checkboxes */
+    align-items: center; /* Vertically align checkboxes */
+    padding: 0; /* Remove extra padding */
 }
-.section {
-    margin-bottom: 30px; /* Increase spacing for better separation */
+
+.checkbox-group input[type="checkbox"] {
+    transform: scale(0.6); /* Smaller checkboxes */
+    margin: 0; /* No margin to prevent overflow */
+    padding: 0;
 }
+
+
+/* Specific Column Widths for Uniform Layout */
+.profile-table th,
+.profile-table td {
+    width: 10%; /* Adjust to balance columns */
+}
+
+.profile-table th:first-child, /* For row labels like "Starting", "Advance" */
+.profile-table td:first-child {
+    width: 15%; /* Slightly wider for labels */
+}
+
+.profile-table th:last-child, /* For the last column */
+.profile-table td:last-child {
+    width: 12%; /* Adjusted width for better fit */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1200px) {
+    .profile-table {
+        font-size: 12px; /* Reduce font size for smaller screens */
+    }
+
+    .checkbox-group {
+        gap: 1px 3px; /* Reduce spacing for narrow screens */
+    }
+}
+
 /* Talents & Knowledges Section */
 .talents-section {
     margin-top: 20px;
@@ -201,13 +280,13 @@ table td {
 }
 
 /* Talents Table */
-.talents-table {
+.talents-table, .acquisition-table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0 8px; /* Adds spacing between rows */
 }
 
-.talents-table th {
+.talents-table th, .acquisition-table th {
     background-color: #8b4513;
     color: #fff;
     text-transform: uppercase;
@@ -218,12 +297,12 @@ table td {
     border-top-right-radius: 8px;
 }
 
-.talents-table td {
+.talents-table td, .acquisition-table td {
     padding: 10px;
     vertical-align: middle;
 }
 
-.talents-table td input {
+.talents-table td input, .acquisition-table td input {
     width: 95%; /* Ensure inputs fit neatly within cells */
     padding: 8px 10px; /* Add padding for better readability */
     border: 1px solid #8b4513;
@@ -232,34 +311,101 @@ table td {
     background-color: #fff8dc;
     transition: all 0.3s ease;
     box-sizing: border-box; /* Prevents overflow */
-}
-/* Adjust the column widths */
-.talents-table th:first-child, .talents-table td:first-child {
-    width: 30%; /* Smaller width for Acquisition */
+    resize: vertical; /* Allow vertical resizing */
+    overflow: auto; /* Prevent overflow issues */
 }
 
-.talents-table th:last-child, .talents-table td:last-child {
+/* Adjust the column widths */
+.talents-table th:first-child, .talents-table td:first-child,
+.acquisition-table th:first-child, .acquisition-table td:first-child {
+    width: 30%; /* Smaller width for Talent/Acquisition */
+}
+
+.talents-table th:last-child, .talents-table td:last-child,
+.acquisition-table th:last-child, .acquisition-table td:last-child {
     width: 70%; /* Larger width for Description */
 }
+
 /* Add space between the two input fields in the same row */
-.talents-table td:first-child input {
+.talents-table td:first-child input, .acquisition-table td:first-child input {
     margin-right: 10px; /* Space between Acquisition and Description */
 }
 
 /* Add consistent spacing between rows */
-.talents-table td {
+.talents-table td, .acquisition-table td {
     padding: 12px 10px; /* Adjust vertical and horizontal padding */
 }
+
 /* Hover and Focus Effects */
-.talents-table td input:focus {
+.talents-table td input:focus, .acquisition-table td input:focus {
     outline: none;
     border-color: #b8860b;
     box-shadow: 0 0 5px 2px rgba(184, 134, 11, 0.5);
 }
 
-.talents-table td input:hover {
+.talents-table td input:hover, .acquisition-table td input:hover {
     border-color: #4b2e02;
     background-color: #f5deb3;
+}
+
+/* Tabs Styling */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.tab-button {
+    background-color: #8b4513;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.tab-button.active {
+    background-color: #4b2e02;
+}
+
+.tab-button:hover {
+    background-color: #6a3517;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none; /* Hide inactive tabs */
+}
+
+.tab-content.active {
+    display: block; /* Show active tab */
+}
+
+/* Table Controls */
+.table-controls {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.action-button {
+    background-color: #8b4513;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #6a3517;
 }
 
 /* Responsive Design */
@@ -293,6 +439,27 @@ table td {
 
 .action-button:hover {
     background-color: #4b2e02;
+}
+.table-controls {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.action-button {
+    background-color: #8b4513;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #6a3517;
 }
 
 
@@ -341,12 +508,13 @@ table td {
 }
 
 .tab-content {
-    display: none;
+    display: none; /* Hide inactive tabs */
 }
 
 .tab-content.active {
-    display: block;
+    display: block; /* Show active tab */
 }
+
 
 .skills-table {
     width: 100%;

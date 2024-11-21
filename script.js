@@ -1,112 +1,87 @@
-// Helper function to calculate bonuses (Strength, Toughness, etc.)
-function calculateBonus(value) {
-    return Math.floor(value / 10);
-}
+document.addEventListener("DOMContentLoaded", () => {
+    // ===================
+    // Tab Switching Functionality
+    // ===================
+    function setupTabs(tabContainerSelector) {
+        const tabButtons = document.querySelectorAll(`${tabContainerSelector} .tab-button`);
+        const tabContents = document.querySelectorAll(`${tabContainerSelector} .tab-content`);
 
-// Update derived stats when Primary Profile values change
-function updateDerivedStats() {
-    const strength = document.getElementById("strength").value || 0;
-    const toughness = document.getElementById("toughness").value || 0;
+        tabButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                // Remove active class from all buttons and contents
+                tabButtons.forEach((btn) => btn.classList.remove("active"));
+                tabContents.forEach((content) => content.classList.remove("active"));
 
-    // Update Strength Bonus (SB) and Toughness Bonus (TB)
-    document.getElementById("strengthBonus").value = calculateBonus(strength);
-    document.getElementById("toughnessBonus").value = calculateBonus(toughness);
-}
-
-// Save all character sheet data to localStorage
-function saveCharacterData() {
-    const data = {
-        name: document.getElementById("name").value,
-        race: document.getElementById("race").value,
-        career: document.getElementById("career").value,
-        primaryProfile: Array.from(
-            document.querySelectorAll(".primary-profile input")
-        ).map((input) => input.value),
-        secondaryProfile: Array.from(
-            document.querySelectorAll(".secondary-profile input")
-        ).map((input) => input.value),
-        skills: Array.from(
-            document.querySelectorAll(".skills-section tbody tr")
-        ).map((row) => ({
-            skill: row.querySelector("td:first-child").textContent,
-            total: row.querySelector("td:nth-child(2) input").value,
-            plus10: row.querySelector("td:nth-child(3) input").checked,
-            plus20: row.querySelector("td:nth-child(4) input").checked,
-        })),
-    };
-
-    localStorage.setItem("characterData", JSON.stringify(data));
-    alert("Character data saved!");
-}
-
-// Load saved character sheet data from localStorage
-function loadCharacterData() {
-    const data = JSON.parse(localStorage.getItem("characterData"));
-
-    if (!data) {
-        alert("No saved data found!");
-        return;
+                // Add active class to clicked button and corresponding content
+                button.classList.add("active");
+                const tabId = button.getAttribute("data-tab");
+                const targetContent = document.getElementById(tabId);
+                if (targetContent) {
+                    targetContent.classList.add("active");
+                }
+            });
+        });
     }
 
-    // Load character details
-    document.getElementById("name").value = data.name || "";
-    document.getElementById("race").value = data.race || "";
-    document.getElementById("career").value = data.career || "";
+    // Initialize tabs for all sections
+    setupTabs(".talents-section");
+    setupTabs(".skills-section");
 
-    // Load primary profile
-    const primaryInputs = document.querySelectorAll(".primary-profile input");
-    data.primaryProfile.forEach((value, index) => {
-        primaryInputs[index].value = value;
-    });
+    // ===================
+    // Add/Remove Rows for Talents
+    // ===================
+    const talentsTableBody = document.querySelector("#talents .talents-table tbody");
+    const addTalentRowButton = document.getElementById("add-row-talents");
+    const removeTalentRowButton = document.getElementById("remove-row-talents");
 
-    // Load secondary profile
-    const secondaryInputs = document.querySelectorAll(".secondary-profile input");
-    data.secondaryProfile.forEach((value, index) => {
-        secondaryInputs[index].value = value;
-    });
+    if (addTalentRowButton && removeTalentRowButton) {
+        addTalentRowButton.addEventListener("click", () => {
+            const newRow = document.createElement("tr");
+            newRow.innerHTML = `
+                <td><input type="text" placeholder="Enter Talent"></td>
+                <td><input type="text" placeholder="Enter Description"></td>
+            `;
+            talentsTableBody.appendChild(newRow);
+        });
 
-    // Load skills
-    const skillRows = document.querySelectorAll(".skills-section tbody tr");
-    data.skills.forEach((skill, index) => {
-        const row = skillRows[index];
-        row.querySelector("td:nth-child(2) input").value = skill.total;
-        row.querySelector("td:nth-child(3) input").checked = skill.plus10;
-        row.querySelector("td:nth-child(4) input").checked = skill.plus20;
-    });
-
-    alert("Character data loaded!");
-}
-
-// Reset the character sheet to default values
-function resetCharacterSheet() {
-    if (confirm("Are you sure you want to reset the sheet? All data will be lost.")) {
-        document.querySelectorAll("input, textarea").forEach((input) => {
-            if (input.type === "checkbox") {
-                input.checked = false;
+        removeTalentRowButton.addEventListener("click", () => {
+            if (talentsTableBody.children.length > 1) {
+                talentsTableBody.removeChild(talentsTableBody.lastChild);
             } else {
-                input.value = "";
+                alert("You must keep at least one row!");
             }
         });
     }
-}
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Tab switching functionality
-    const tabButtons = document.querySelectorAll(".tab-button");
-    const tabContents = document.querySelectorAll(".tab-content");
+    // ===================
+    // Add/Remove Rows for Acquisitions
+    // ===================
+    const acquisitionsTableBody = document.querySelector("#acquisitions .acquisition-table tbody");
+    const addAcquisitionRowButton = document.getElementById("add-row-acquisitions");
+    const removeAcquisitionRowButton = document.getElementById("remove-row-acquisitions");
 
-    tabButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            tabButtons.forEach((btn) => btn.classList.remove("active"));
-            tabContents.forEach((content) => content.classList.remove("active"));
-
-            button.classList.add("active");
-            const tabId = button.getAttribute("data-tab");
-            document.getElementById(tabId).classList.add("active");
+    if (addAcquisitionRowButton && removeAcquisitionRowButton) {
+        addAcquisitionRowButton.addEventListener("click", () => {
+            const newRow = document.createElement("tr");
+            newRow.innerHTML = `
+                <td><input type="text" placeholder="Enter Acquisition"></td>
+                <td><input type="text" placeholder="Enter Description"></td>
+            `;
+            acquisitionsTableBody.appendChild(newRow);
         });
-    });
 
-    // Skill functionality: Taken, +10%, +20%
+        removeAcquisitionRowButton.addEventListener("click", () => {
+            if (acquisitionsTableBody.children.length > 1) {
+                acquisitionsTableBody.removeChild(acquisitionsTableBody.lastChild);
+            } else {
+                alert("You must keep at least one row!");
+            }
+        });
+    }
+
+    // ===================
+    // Skills Section: Auto Update Total with Bonuses
+    // ===================
     const skillRows = document.querySelectorAll(".skills-table tbody tr");
 
     skillRows.forEach((row) => {
@@ -114,80 +89,142 @@ document.addEventListener("DOMContentLoaded", () => {
         const bonus10 = row.querySelector(".bonus-10");
         const bonus20 = row.querySelector(".bonus-20");
         const totalInput = row.querySelector(".skill-total");
-
+    
         let baseTotal = 0; // Store the base total without bonuses
         let currentBonus = 0; // Track the currently applied bonus
-
-        // Toggle total input and bonuses when "Taken" is checked/unchecked
+    
+        // Enable/Disable bonuses when "Taken" is checked/unchecked
         if (takenCheckbox) {
             takenCheckbox.addEventListener("change", () => {
                 if (takenCheckbox.checked) {
                     bonus10.disabled = false;
                     bonus20.disabled = false;
-                    baseTotal = parseInt(totalInput.value) || 0; // Initialize base total
+    
+                    // Reinitialize baseTotal only when "Taken" is first checked
+                    if (baseTotal === 0) {
+                        baseTotal = parseInt(totalInput.value) - currentBonus || 0;
+                    }
+    
                     totalInput.value = baseTotal + currentBonus; // Update total with current bonus
                 } else {
                     bonus10.checked = false;
                     bonus20.checked = false;
                     bonus10.disabled = true;
                     bonus20.disabled = true;
-                    totalInput.value = ""; // Clear total when skill is not taken
-                    baseTotal = 0; // Reset base total
+    
+                    // Reset total and bonuses
+                    totalInput.value = baseTotal; // Reset total to base value
                     currentBonus = 0; // Reset current bonus
                 }
             });
         }
-
+    
         // Handle +10% bonus checkbox
         bonus10.addEventListener("change", () => {
             if (bonus10.checked) {
-                currentBonus = 10; // Set current bonus to 10
+                currentBonus = 10;
                 bonus20.checked = false; // Uncheck +20%
             } else {
                 currentBonus = 0; // Remove current bonus
             }
             totalInput.value = baseTotal + currentBonus; // Update total
         });
-
+    
         // Handle +20% bonus checkbox
         bonus20.addEventListener("change", () => {
             if (bonus20.checked) {
-                currentBonus = 20; // Set current bonus to 20
+                currentBonus = 20;
                 bonus10.checked = false; // Uncheck +10%
             } else {
                 currentBonus = 0; // Remove current bonus
             }
             totalInput.value = baseTotal + currentBonus; // Update total
         });
-
-        // Update base total when total value is manually edited
+    
+        // Update base total when the total value is manually edited
         totalInput.addEventListener("input", () => {
-            baseTotal = parseInt(totalInput.value) - currentBonus || 0;
-            totalInput.value = baseTotal + currentBonus; // Ensure total is consistent
+            baseTotal = parseInt(totalInput.value || 0) - currentBonus; // Recalculate base total
         });
     });
-});
-document.addEventListener("DOMContentLoaded", () => {
-    const tableBody = document.querySelector(".talents-table tbody");
-    const addRowButton = document.getElementById("add-row");
-    const removeRowButton = document.getElementById("remove-row");
 
-    // Add Row
-    addRowButton.addEventListener("click", () => {
-        const newRow = document.createElement("tr");
-        newRow.innerHTML = `
-            <td><input type="text" placeholder="Enter Talent"></td>
-            <td><input type="text" placeholder="Enter Description"></td>
-        `;
-        tableBody.appendChild(newRow);
-    });
+        // Update base total when the total value is manually edited
+        totalInput.addEventListener("input", () => {
+            const enteredValue = parseInt(totalInput.value || 0);
+            baseTotal = enteredValue - currentBonus; // Recalculate base total based on current input
+            updateTotal(); // Ensure the displayed total is correct
+        });
+    
 
-    // Remove Row
-    removeRowButton.addEventListener("click", () => {
-        if (tableBody.children.length > 1) {
-            tableBody.removeChild(tableBody.lastChild);
-        } else {
-            alert("You must keep at least one row!");
+
+    // ===================
+    // Save, Load, and Reset Character Sheet
+    // ===================
+    function saveCharacterData() {
+        const data = {
+            name: document.getElementById("name").value,
+            race: document.getElementById("race").value,
+            career: document.getElementById("career").value,
+            primaryProfile: Array.from(document.querySelectorAll(".primary-profile input")).map((input) => input.value),
+            secondaryProfile: Array.from(document.querySelectorAll(".secondary-profile input")).map((input) => input.value),
+            skills: Array.from(document.querySelectorAll(".skills-section tbody tr")).map((row) => ({
+                skill: row.querySelector("td:first-child").textContent,
+                total: row.querySelector(".skill-total").value,
+                plus10: row.querySelector(".bonus-10").checked,
+                plus20: row.querySelector(".bonus-20").checked,
+            })),
+        };
+
+        localStorage.setItem("characterData", JSON.stringify(data));
+        alert("Character data saved!");
+    }
+
+    function loadCharacterData() {
+        const data = JSON.parse(localStorage.getItem("characterData"));
+        if (!data) {
+            alert("No saved data found!");
+            return;
         }
-    });
+
+        // Populate data into fields
+        document.getElementById("name").value = data.name || "";
+        document.getElementById("race").value = data.race || "";
+        document.getElementById("career").value = data.career || "";
+        const primaryInputs = document.querySelectorAll(".primary-profile input");
+        const secondaryInputs = document.querySelectorAll(".secondary-profile input");
+
+        data.primaryProfile.forEach((value, index) => {
+            primaryInputs[index].value = value;
+        });
+        data.secondaryProfile.forEach((value, index) => {
+            secondaryInputs[index].value = value;
+        });
+
+        // Populate skills
+        const skillRows = document.querySelectorAll(".skills-section tbody tr");
+        data.skills.forEach((skill, index) => {
+            const row = skillRows[index];
+            row.querySelector(".skill-total").value = skill.total;
+            row.querySelector(".bonus-10").checked = skill.plus10;
+            row.querySelector(".bonus-20").checked = skill.plus20;
+        });
+
+        alert("Character data loaded!");
+    }
+
+    function resetCharacterSheet() {
+        if (confirm("Are you sure you want to reset the sheet? All data will be lost.")) {
+            document.querySelectorAll("input, textarea").forEach((input) => {
+                if (input.type === "checkbox") {
+                    input.checked = false;
+                } else {
+                    input.value = "";
+                }
+            });
+        }
+    }
+
+    // Attach save/load/reset buttons
+    document.getElementById("saveButton").addEventListener("click", saveCharacterData);
+    document.getElementById("loadButton").addEventListener("click", loadCharacterData);
+    document.getElementById("resetButton").addEventListener("click", resetCharacterSheet);
 });
