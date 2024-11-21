@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFRP1E Character Sheet</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="sheet-container">
+        <!-- Header -->
+        <div class="sheet-header">
+            <h1>Aetherbound Fantasy Roleplay</h1>
+            <h2>1st Edition Character Sheet</h2>
+        </div>
+
+        <!-- Character Details -->
+        <div class="section character-details">
+            <div class="detail-item">
+                <label for="name">Name:</label>
+                <input id="name" type="text" placeholder="Character Name">
+            </div>
+            <div class="detail-item">
+                <label for="race">Race:</label>
+                <input id="race" type="text" placeholder="Human, Elf, etc.">
+            </div>
+            <div class="detail-item">
+                <label for="career">Career Path:</label>
+                <input id="career" type="text" placeholder="Career Path">
+            </div>
+        </div>
+<!-- Personal Details Section -->
+<div class="section personal-details">
+    <h3>Personal Details</h3>
+    <div class="details-grid">
+        <div class="detail-item">
+            <label for="gender">Gender:</label>
+            <input id="gender" type="text" placeholder="Male/Female">
+        </div>
+        <div class="detail-item">
+            <label for="age">Age:</label>
+            <input id="age" type="number" placeholder="0">
+        </div>
+        <div class="detail-item">
+            <label for="dateOfBirth">Date of Birth:</label>
+            <input id="dateOfBirth" type="text" placeholder="DD/MM/YYYY">
+        </div>
+        <div class="detail-item">
+            <label for="birthplace">Birthplace:</label>
+            <input id="birthplace" type="text" placeholder="Town/Village">
+        </div>
+        <div class="detail-item">
+            <label for="nationality">Nationality:</label>
+            <input id="nationality" type="text" placeholder="Nationality">
+        </div>
+        <div class="detail-item">
+            <label for="religion">Religion:</label>
+            <input id="religion" type="text" placeholder="Religion">
+        </div>
+        <div class="detail-item">
+            <label for="height">Height:</label>
+            <input id="height" type="text" placeholder="e.g., 6'0">
+        </div>
+        <div class="detail-item">
+            <label for="weight">Weight:</label>
+            <input id="weight" type="text" placeholder="e.g., 150 lbs">
+        </div>
+        <div class="detail-item">
+            <label for="eyes">Eyes:</label>
+            <input id="eyes" type="text" placeholder="Eye Color">
+        </div>
+        <div class="detail-item">
+            <label for="hair">Hair:</label>
+            <input id="hair" type="text" placeholder="Hair Color">
+        </div>
+        <div class="detail-item full-width">
+            <label for="marks">Distinguishing Marks:</label>
+            <input id="marks" type="text" placeholder="e.g., Scar, Birthmark">
+        </div>
+    </div>
+</div>
+
+        <!-- Primary and Secondary Profiles -->
+        <div class="primary-profile">
+            <h3>Primary Profile</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>WS</th>
+                        <th>BS</th>
+                        <th>STR</th>
+                        <th>T</th>
+                        <th>AG</th>
+                        <th>INT</th>
+                        <th>AFF</th>
+                        <th>FEL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="number" id="weaponSkill" placeholder="0"></td>
+                        <td><input type="number" id="ballisticSkill" placeholder="0"></td>
+                        <td><input type="number" id="strength" placeholder="0"></td>
+                        <td><input type="number" id="toughness" placeholder="0"></td>
+                        <td><input type="number" id="agility" placeholder="0"></td>
+                        <td><input type="number" id="intelligence" placeholder="0"></td>
+                        <td><input type="number" id="affinity" placeholder="0"></td>
+                        <td><input type="number" id="fellowship" placeholder="0"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="secondary-profile">
+            <h3>Secondary Profile</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>A</th>
+                        <th>W</th>
+                        <th>POW</th>
+                        <th>DEF</th>
+                        <th>M</th>
+                        <th>AE</th>
+                        <th>CP</th>
+                        <th>FP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="number" id="attacks" placeholder="0"></td>
+                        <td><input type="number" id="wounds" placeholder="0"></td>
+                        <td><input type="number" id="power" placeholder="0"></td>
+                        <td><input type="number" id="defense" placeholder="0"></td>
+                        <td><input type="number" id="movement" placeholder="0"></td>
+                        <td><input type="number" id="aetheric" placeholder="0"></td>
+                        <td><input type="number" id="chaosPoints" placeholder="0"></td>
+                        <td><input type="number" id="fatePoints" placeholder="0"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Talents & Knowledges Section -->
+        <div class="talents-section">
+            <h3 class="talents-header">
+                <span class="header-icon">✒️</span> Talents & Knowledges
+                <hr class="header-divider">
+            </h3>
+            <table class="talents-table">
+                <thead>
+                    <tr>
+                        <th>ACQUISITION</th>
+                        <th>DESCRIPTION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" placeholder="Enter Acquisition"></td>
+                        <td><input type="text" placeholder="Enter Description"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder="Enter Acquisition"></td>
+                        <td><input type="text" placeholder="Enter Description"></td>
+                    </tr>
+                    <div class="talents-actions">
+                        <button id="add-row" class="action-button">Add Row</button>
+                        <button id="remove-row" class="action-button">Remove Row</button>
+                    </div>
+                    
+                </tbody>
+            </table>
+        </div>
+
+       <!-- Skills Section -->
+<div class="skills-section">
+    <h3>Skills</h3>
+    <div class="tabs">
+        <button class="tab-button active" data-tab="basic-skills">Basic Skills</button>
+        <button class="tab-button" data-tab="advanced-skills">Advanced Skills</button>
+    </div>
+    <div class="tab-content active" id="basic-skills">
+        <table class="skills-table">
+            <thead>
+                <tr>
+                    <th>TAKEN</th>
+                    <th>SKILL</th>
+                    <th>ATTRIBUTE</th>
+                    <th>TOTAL</th>
+                    <th>+10%</th>
+                    <th>+20%</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Basic Skills -->
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Animal Care</td>
+                    <td>Intelligence</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Drive</td>
+                    <td>Intelligence</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Evaluate</td>
+                    <td>Intelligence</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Gamble</td>
+                    <td>Intelligence</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Wilderness Skills</td>
+                    <td>Intelligence</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Observation</td>
+                    <td>Intelligence</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Social Influence</td>
+                    <td>Fellowship</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Command</td>
+                    <td>Fellowship</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Deception</td>
+                    <td>Fellowship</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Ride</td>
+                    <td>Agility</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Arcana</td>
+                    <td>Affinity</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Insight</td>
+                    <td>Affinity</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <!-- Add more rows for Basic Skills -->
+            </tbody>
+        </table>
+    </div>
+    <div class="tab-content" id="advanced-skills">
+        <table class="skills-table">
+            <thead>
+                <tr>
+                    <th>TAKEN</th>
+                    <th>SKILL</th>
+                    <th>ATTRIBUTE</th>
+                    <th>TOTAL</th>
+                    <th>+10%</th>
+                    <th>+20%</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Advanced Skills -->
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Animal Mastery</td>
+                    <td>Fellowship</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Persuasion</td>
+                    <td>Fellowship</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Interrogation</td>
+                    <td>Fellowship</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Wilderness Tactics</td>
+                    <td>Intelligence</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Heal</td>
+                    <td>Intelligence</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Lip Reading</td>
+                    <td>Intelligence</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Prepare Poison</td>
+                    <td>Intelligence</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Aethryic Manipulation</td>
+                    <td>Affinity</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Hypnotism</td>
+                    <td>Affinity</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Elementalism</td>
+                    <td>Affinity</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Dodge Blow</td>
+                    <td>Agility</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Subterfuge</td>
+                    <td>Agility</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Flight Handling</td>
+                    <td>Agility</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Ventriloquism</td>
+                    <td>Agility</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <!-- Add more rows for Advanced Skills -->
+            </tbody>
+        </table>
+    </div>
+</div>
