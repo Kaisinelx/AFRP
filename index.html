@@ -9,12 +9,14 @@
 </head>
 <body>
     <div class="sheet-container">
+         <!-- First Page -->
+    <div class="page" id="page-1">
         <!-- Header -->
         <div class="sheet-header">
+            <img src="https://i.postimg.cc/ZYX75tV8/Logo.png" alt="Aetherbound Fantasy Roleplay" class="sheet-logo">
             <h1>Aetherbound Fantasy Roleplay</h1>
-            <h2>1st Edition Character Sheet</h2>
+            <h2>1st Edition Character Sheet</h2>        
         </div>
-
         <!-- Character Details -->
         <div class="section character-details">
             <div class="detail-item">
@@ -89,49 +91,50 @@
             <thead>
                 <tr>
                     <th></th>
-                    <th>Weapon Skill</th>
-                    <th>Ballistic Skill</th>
+                    <th>Combat Skill</th>
                     <th>Strength</th>
                     <th>Toughness</th>
                     <th>Agility</th>
                     <th>Intelligence</th>
                     <th>Affinity</th>
+                    <th>Wisdom</th>
                     <th>Fellowship</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Starting</td>
-                    <td><input type="number" class="main-starting" data-attr="ws" value="0"></td>
-                    <td><input type="number" class="main-starting" data-attr="bs" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="cs" value="0"></td>
                     <td><input type="number" class="main-starting" data-attr="s" value="0"></td>
                     <td><input type="number" class="main-starting" data-attr="t" value="0"></td>
                     <td><input type="number" class="main-starting" data-attr="ag" value="0"></td>
                     <td><input type="number" class="main-starting" data-attr="int" value="0"></td>
                     <td><input type="number" class="main-starting" data-attr="aff" value="0"></td>
                     <td><input type="number" class="main-starting" data-attr="fel" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="wis" value="0"></td>
                 </tr>
                 <tr>
                     <td>Advance</td>
-                    <td><input type="number" class="main-advance" data-attr="ws" value="0"></td>
-                    <td><input type="number" class="main-advance" data-attr="bs" value="0"></td>
+                    <td><input type="number" class="main-advance" data-attr="cs" value="0"></td>
                     <td><input type="number" class="main-advance" data-attr="s" value="0"></td>
                     <td><input type="number" class="main-advance" data-attr="t" value="0"></td>
                     <td><input type="number" class="main-advance" data-attr="ag" value="0"></td>
                     <td><input type="number" class="main-advance" data-attr="int" value="0"></td>
                     <td><input type="number" class="main-advance" data-attr="aff" value="0"></td>
                     <td><input type="number" class="main-advance" data-attr="fel" value="0"></td>
+                    <td><input type="number" class="main-advance" data-attr="wis" value="0"></td>
                 </tr>
                 <tr>
                     <td>Current</td>
-                    <td><input type="number" class="main-current" data-attr="ws" value="0" readonly></td>
-                    <td><input type="number" class="main-current" data-attr="bs" value="0" readonly></td>
+                    <td><input type="number" class="main-current" data-attr="cs" value="0" readonly></td>
                     <td><input type="number" class="main-current" data-attr="s" value="0" readonly></td>
                     <td><input type="number" class="main-current" data-attr="t" value="0" readonly></td>
                     <td><input type="number" class="main-current" data-attr="ag" value="0" readonly></td>
                     <td><input type="number" class="main-current" data-attr="int" value="0" readonly></td>
                     <td><input type="number" class="main-current" data-attr="aff" value="0" readonly></td>
-                    <td><input type="number" class="main-current" data-attr="fel" value="0" readonly></td>
+                    <td><input type="number" class="main-current" data-attr="fel" value="0" readonly></td>             
+                    <td><input type="number" class="main-current" data-attr="wis" value="0" readonly></td>
+
                 </tr>
                 <tr>
                     <tr>
@@ -265,14 +268,14 @@
             <tbody>
                 <tr>
                     <td>Starting</td>
-                    <td><input type="number" class="main-starting" data-attr="ws" value="0"></td>
-                    <td><input type="number" class="main-starting" data-attr="bs" value="0"></td>
-                    <td><input type="number" class="main-starting" data-attr="s" value="0"></td>
-                    <td><input type="number" class="main-starting" data-attr="t" value="0"></td>
-                    <td><input type="number" class="main-starting" data-attr="ag" value="0"></td>
-                    <td><input type="number" class="main-starting" data-attr="int" value="0"></td>
-                    <td><input type="number" class="main-starting" data-attr="aff" value="0"></td>
-                    <td><input type="number" class="main-starting" data-attr="fel" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="a" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="w" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="pow" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="def" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="m" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="ae" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="cp" value="0"></td>
+                    <td><input type="number" class="main-starting" data-attr="fp" value="0"></td>
                 </tr>
                 <tr>
                     <td>Advance</td>
@@ -400,47 +403,7 @@
                 <!-- Basic Skills -->
                 <tr>
                     <td><input type="checkbox" class="skill-taken"></td>
-                    <td>Animal Care</td>
-                    <td>Intelligence</td>
-                    <td><input type="number" class="skill-total" value="0"></td>
-                    <td><input type="checkbox" class="bonus-10"></td>
-                    <td><input type="checkbox" class="bonus-20"></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="skill-taken"></td>
-                    <td>Drive</td>
-                    <td>Intelligence</td>
-                    <td><input type="number" class="skill-total" value="0"></td>
-                    <td><input type="checkbox" class="bonus-10"></td>
-                    <td><input type="checkbox" class="bonus-20"></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="skill-taken"></td>
-                    <td>Evaluate</td>
-                    <td>Intelligence</td>
-                    <td><input type="number" class="skill-total" value="0"></td>
-                    <td><input type="checkbox" class="bonus-10"></td>
-                    <td><input type="checkbox" class="bonus-20"></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="skill-taken"></td>
-                    <td>Gamble</td>
-                    <td>Intelligence</td>
-                    <td><input type="number" class="skill-total" value="0"></td>
-                    <td><input type="checkbox" class="bonus-10"></td>
-                    <td><input type="checkbox" class="bonus-20"></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="skill-taken"></td>
-                    <td>Wilderness Skills</td>
-                    <td>Intelligence</td>
-                    <td><input type="number" class="skill-total" value="0"></td>
-                    <td><input type="checkbox" class="bonus-10"></td>
-                    <td><input type="checkbox" class="bonus-20"></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="skill-taken"></td>
-                    <td>Observation</td>
+                    <td>Speculation</td>
                     <td>Intelligence</td>
                     <td><input type="number" class="skill-total" value="0"></td>
                     <td><input type="checkbox" class="bonus-10"></td>
@@ -472,7 +435,7 @@
                 </tr>
                 <tr>
                     <td><input type="checkbox" class="skill-taken"></td>
-                    <td>Ride</td>
+                    <td>Mounting</td>
                     <td>Agility</td>
                     <td><input type="number" class="skill-total" value="0"></td>
                     <td><input type="checkbox" class="bonus-10"></td>
@@ -480,8 +443,40 @@
                 </tr>
                 <tr>
                     <td><input type="checkbox" class="skill-taken"></td>
-                    <td>Arcana</td>
-                    <td>Affinity</td>
+                    <td>Sleight of Hand</td>
+                    <td>Agility</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Stealth</td>
+                    <td>Agility</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Mobility</td>
+                    <td>Agility</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Animal Mastery</td>
+                    <td>Wisdom</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Observation</td>
+                    <td>Wisdom</td>
                     <td><input type="number" class="skill-total" value="0"></td>
                     <td><input type="checkbox" class="bonus-10"></td>
                     <td><input type="checkbox" class="bonus-20"></td>
@@ -489,6 +484,22 @@
                 <tr>
                     <td><input type="checkbox" class="skill-taken"></td>
                     <td>Insight</td>
+                    <td>Wisdom</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Survival</td>
+                    <td>Wisdom</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Arcana</td>
                     <td>Affinity</td>
                     <td><input type="number" class="skill-total" value="0"></td>
                     <td><input type="checkbox" class="bonus-10"></td>
@@ -514,7 +525,7 @@
                 <!-- Advanced Skills -->
                 <tr>
                     <td><input type="checkbox" class="skill-taken"></td>
-                    <td>Animal Mastery</td>
+                    <td>Veterinary Care</td>
                     <td>Fellowship</td>
                     <td><input type="number" class="skill-total" value="0"></td>
                     <td><input type="checkbox" class="bonus-10"></td>
@@ -602,7 +613,7 @@
                 </tr>
                 <tr>
                     <td><input type="checkbox" class="skill-taken"></td>
-                    <td>Subterfuge</td>
+                    <td>Shadowing</td>
                     <td>Agility</td>
                     <td><input type="number" class="skill-total" value="0"></td>
                     <td><input type="checkbox" class="bonus-10"></td>
@@ -624,8 +635,37 @@
                     <td><input type="checkbox" class="bonus-10"></td>
                     <td><input type="checkbox" class="bonus-20"></td>
                 </tr>
+                <tr>
+                    <td><input type="checkbox" class="skill-taken"></td>
+                    <td>Pick Lock</td>
+                    <td>Agility</td>
+                    <td><input type="number" class="skill-total" value="0"></td>
+                    <td><input type="checkbox" class="bonus-10"></td>
+                    <td><input type="checkbox" class="bonus-20"></td>
+                </tr>
                 <!-- Add more rows for Advanced Skills -->
             </tbody>
         </table>
     </div>
-</div>
+    </div>
+    <button id="saveButton">Save</button>
+            <button id="loadButton">Load</button>
+            <button id="resetButton">Reset</button>
+        </div>
+
+        <!-- Second Page -->
+        <div class="page" id="page-2">
+            <h1>Character Backstory</h1>
+            <p>This is the second page for additional character details.</p>
+        </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="navigation-buttons">
+        <button onclick="showPage(1)">Page 1</button>
+        <button onclick="showPage(2)">Page 2</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

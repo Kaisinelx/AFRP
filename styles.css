@@ -1,48 +1,98 @@
-/* General Styling */
-body {
-    font-family: 'Times New Roman', serif;
-    background: url('parchment-texture.jpg') center/cover no-repeat, #f5deb3;
-    color: #333;
-    margin: 0;
-    padding: 20px;
-}
-
-.sheet-container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.95);
-    border: 3px solid #8b4513;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Header */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Uncial+Antiqua&display=swap');
 .sheet-header {
     text-align: center;
     margin-bottom: 20px;
     padding-bottom: 10px;
     border-bottom: 3px solid #8b4513;
+    position: relative;
+}
+
+.sheet-logo {
+    display: block;
+    margin: 0 auto 10px; /* Center the logo and add spacing below */
+    max-width: 200px; /* Scale down the logo to fit the header */
+    height: auto; /* Maintain the logo's aspect ratio */
+}
+
+/* General Styling */
+body {
+    font-family: 'Times New Roman', serif; /* Keep original font */
+    background: linear-gradient(to bottom, #faf3e6, #e5d2b7); /* Parchment-like gradient */
+    color: #2e2e2e; /* Subtle dark text for readability */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Fantasy-Themed Label Styles */
+/* Add this below or near table/header styling */
+.character-label {
+    font-family: 'Uncial Antiqua', serif; /* Fantasy-style font */
+    font-size: 18px; /* Slightly larger for readability */
+    color: #4b2e02; /* Deep brown color for a fantasy touch */
+    text-transform: uppercase; /* Capitalize text for emphasis */
+    letter-spacing: 1px; /* Add spacing between letters */
+    text-align: center; /* Center the text */
+    margin: 5px 0; /* Add some spacing around the labels */
+}
+
+/* Highlight Header Background */
+.table-header {
+    background: linear-gradient(to bottom, #8b4513, #4b2e02); /* Gold-to-brown gradient */
+    color: #fff; /* White text */
+    font-family: 'Cinzel', serif; /* Elegant serif font for headers */
+    font-size: 20px; /* Larger font size for headers */
+    text-align: center;
+    padding: 8px 0; /* Vertical padding */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}/* Add Hover Effect */
+.character-label:hover {
+    color: #d4af37; /* Gold-like color on hover */
+    transform: scale(1.1); /* Slight zoom effect */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+/* Container Styling */
+.sheet-container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(238, 222, 178, 0.95); /* Light parchment */
+    border: 3px solid #d4af37; /* Gold border */
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Header */
+/* Header Styling */
+.sheet-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #d4af37; /* Gold separator */
 }
 
 .sheet-header h1 {
     font-size: 36px;
     margin: 0;
-    color: #4b2e02;
+    color: #8b4513; /* Gold text for main header */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6); /* Fantasy shadow effect */
 }
 
 .sheet-header h2 {
     font-size: 20px;
     margin: 5px 0 0;
-    color: #633c1d;
+    color: #b5864f; /* Muted bronze for subheaders */
 }
 
 /* Character Details */
 .character-details {
     margin-bottom: 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
+    background-color: rgba(245, 235, 215, 0.9); /* Light parchment */
+    border-radius: 10px;
+    padding: 15px;
 }
 
 .detail-item {
@@ -53,36 +103,33 @@ body {
 .detail-item label {
     font-weight: bold;
     font-size: 14px;
+    color: #b5864f; /* Bronze labels */
     margin-bottom: 5px;
 }
 
 .detail-item input {
     padding: 8px;
-    border: 2px solid #8b4513;
-    border-radius: 4px;
-    background-color: #fdf5e6;
-    color: #333;
+    border: 1px solid #d4af37; /* Gold border */
+    border-radius: 5px;
+    background-color: #fdf8e6; /* Soft parchment for inputs */
+    color: #333; /* Dark text for readability */
     font-size: 14px;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 /* Personal Details Section */
 .personal-details {
-    margin-bottom: 20px;
+    background: rgba(255, 248, 220, 0.95); /* Soft parchment */
     padding: 15px;
-    border: 2px solid #8b4513;
+    border: 2px solid #d4af37; /* Gold border */
     border-radius: 8px;
-    background-color: #faf3e6;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 .personal-details h3 {
+    font-family: 'Cinzel', serif; /* Elegant fantasy font */
     font-size: 18px;
-    font-weight: bold;
+    color: #d4af37; /* Gold text */
+    border-bottom: 2px solid #d4af37; /* Gold underline */
     margin-bottom: 10px;
-    color: #4b2e02;
-    text-transform: uppercase;
-    border-bottom: 2px solid #8b4513;
-    padding-bottom: 5px;
 }
 
 /* Grid Layout */
@@ -169,6 +216,7 @@ body {
     border-collapse: collapse;
     margin: 10px 0;
     table-layout: fixed; /* Ensures columns have uniform width */
+    background-color: rgba(245, 235, 215, 0.9); /* Soft parchment */
 }
 
 .profile-table th,
@@ -180,12 +228,14 @@ body {
 }
 
 .profile-table th {
-    background-color: #8b4513;
+    background: linear-gradient(to bottom, #8b4513, #8b4513); /* Gold gradient */
     color: white;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 11px; /* Compact header text */
     padding: 8px;
+    font-size: 11px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .profile-table td input[type="number"] {
@@ -599,3 +649,43 @@ button:hover {
         margin-bottom: 30px;
     }
 }
+/* General Styling for Pages */
+.page {
+    display: none; /* All pages are hidden by default */
+    transition: opacity 0.3s ease-in-out; /* Smooth fade effect */
+    padding: 20px;
+    border: 2px solid #8b4513;
+    border-radius: 10px;
+    background-color: #faf3e6; /* Light parchment-like background */
+    margin-bottom: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Show the active page */
+.page.active {
+    display: block; /* Show the active page */
+    opacity: 1;
+}
+/* Styling for Navigation Buttons */
+.navigation-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.navigation-buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #8b4513;
+    color: white;
+    border: 2px solid #633c1d;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 10px; /* Even spacing between buttons */
+}
+
+.navigation-buttons button:hover {
+    background-color: #633c1d;
+}
+
