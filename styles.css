@@ -16,13 +16,49 @@
 
 /* General Styling */
 body {
-    font-family: 'Times New Roman', serif; /* Keep original font */
-    background: linear-gradient(to bottom, #faf3e6, #e5d2b7); /* Parchment-like gradient */
-    color: #2e2e2e; /* Subtle dark text for readability */
     margin: 0;
-    padding: 20px;
+    height: 100vh;
+background: radial-gradient(circle, #c0a754 0%, rgba(114, 100, 100, 0.144) 80%);
+    background-size: 400% 400%;
+    animation: backgroundAnimation 20s ease infinite;
+    overflow-x: hidden;
+    font-family: 'Cinzel', serif; /* Elegant fantasy font */
 }
 
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Add stars or magical particle effects */
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.imgur.com/4Kv5kV4.png') repeat;
+    z-index: -1;
+    animation: starTwinkle 10s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes starTwinkle {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
 /* Fantasy-Themed Label Styles */
 /* Add this below or near table/header styling */
 .character-label {
@@ -37,7 +73,7 @@ body {
 
 /* Highlight Header Background */
 .table-header {
-    background: linear-gradient(to bottom, #8b4513, #4b2e02); /* Gold-to-brown gradient */
+    background: linear-gradient(to bottom, #8b4513, #5a3908); /* Gold-to-brown gradient */
     color: #fff; /* White text */
     font-family: 'Cinzel', serif; /* Elegant serif font for headers */
     font-size: 20px; /* Larger font size for headers */
@@ -622,22 +658,35 @@ body {
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 16px;
+    background: linear-gradient(145deg, #8b4513, #e69592); /* Earthy brown to soft coral gradient */
+    border: 2px solid #d4af37; /* Gold border for a luxurious feel */
+    color: #ffffff; /* White text for readability */
+    text-shadow: 0 0 8px #d4af37, 0 0 16px #b8860b; /* Gold and bronze glow */
+    padding: 10px 20px; /* Comfortable padding for usability */
+    border-radius: 8px; /* Smooth rounded edges for a polished look */
+    font-family: 'Cinzel', serif; /* Elegant serif font for fantasy theme */
+    font-size: 18px;
     font-weight: bold;
-    background-color: #8b4513;
-    color: white;
-    border: 2px solid #633c1d;
-    border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 0 10px; /* Even spacing between buttons */
+    transition: all 0.3s ease; /* Smooth animations for hover and active states */
+    box-shadow: 0 0 12px #d4af37, inset 0 0 6px #b8860b; /* Outer and inset glow for depth */
 }
 
 button:hover {
-    background-color: #633c1d;
-    border-color: #4b2e02;
+    background: linear-gradient(145deg, #d4af37, #b8860b); /* Warm gold tones */
+    color: #ffffff; /* Keep text white for contrast */
+    box-shadow: 0 0 20px #ffd700, inset 0 0 10px #8b4513; /* Vibrant gold glow with earthy inset */
+    transform: scale(1.1); /* Slightly larger for interaction feedback */
+    transition: all 0.3s ease-in-out; /* Smooth hover effect */
 }
+
+button:active {
+    background: linear-gradient(145deg, #b8860b, #8b4513); /* Inverted gradient for press effect */
+    transform: scale(1); /* Reset scale */
+    box-shadow: 0 0 8px #af71be, inset 0 0 4px #ffd700; /* Subtle inner glow */
+    transition: all 0.1s ease-in-out; /* Quicker transition for active state */
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -659,6 +708,63 @@ button:hover {
     background-color: #faf3e6; /* Light parchment-like background */
     margin-bottom: 20px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+/* Inventory Section */
+.inventory-section {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #8b4513;
+    border-radius: 12px;
+    background: linear-gradient(to bottom, #fdf5e6, #faf3e6);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.inventory-header h2 {
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    color: #4b2e02;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.inventory-table {
+    margin-top: 15px;
+}
+
+.inventory-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.inventory-table th, .inventory-table td {
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #8b4513;
+}
+
+.inventory-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.inventory-footer div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.inventory-footer label {
+    font-weight: bold;
+    color: #4b2e02;
+}
+
+.inventory-footer input {
+    width: 100px;
+    padding: 5px;
+    border: 1px solid #8b4513;
+    border-radius: 5px;
+    text-align: right;
 }
 
 /* Show the active page */

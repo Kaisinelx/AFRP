@@ -5,17 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AFRP1E Character Sheet</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="sheet-container">
-         <!-- First Page -->
+    <!-- Page 1 -->
     <div class="page" id="page-1">
-        <!-- Header -->
-        <div class="sheet-header">
+        <h1>Welcome to Page 1</h1>
+        <p>This is the first page content.</p>
+    </div>
+    <!-- Main Content -->
+        <div class="sheet-container">
+                <!-- Header -->
+                <div class="sheet-header">
             <img src="https://i.postimg.cc/ZYX75tV8/Logo.png" alt="Aetherbound Fantasy Roleplay" class="sheet-logo">
             <h1>Aetherbound Fantasy Roleplay</h1>
-            <h2>1st Edition Character Sheet</h2>        
+                <h2>1st Edition Character Sheet</h2>        
         </div>
         <!-- Character Details -->
         <div class="section character-details">
@@ -30,7 +34,7 @@
             <div class="detail-item">
                 <label for="career">Class Path:</label>
                 <input id="career" type="text" placeholder="Class Path">
-            </div>
+            </div>  
         </div>
 <!-- Personal Details Section -->
 <div class="section personal-details">
@@ -649,23 +653,91 @@
     </div>
     </div>
     <button id="saveButton">Save</button>
-            <button id="loadButton">Load</button>
-            <button id="resetButton">Reset</button>
-        </div>
+    <button id="loadButton">Load</button>
+    <button id="resetButton">Reset</button>
+</div>
+</div>
 
-        <!-- Second Page -->
-        <div class="page" id="page-2">
-            <h1>Character Backstory</h1>
-            <p>This is the second page for additional character details.</p>
+ <!-- Page 2 -->
+ <div class="page" id="page-2">
+    <p>This is the second page content.</p>
+</div>
+</div><div class="inventory-section">
+    <div class="inventory-header">
+        <h2>INVENTORY</h2>
+    </div>
+    <div class="inventory-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Enc</th>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Enc</th>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Enc</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Add 10 blank rows -->
+                ${[...Array(10)]
+                    .map(() => `
+                    <tr>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true"></td>
+                    </tr>`)
+                    .join("")}
+            </tbody>
+        </table>
+    </div>
+    <div class="inventory-footer">
+        <div class="max-enc-capacity">
+            <label>Maximum Enc Capacity = S × 30:</label>
+            <input type="text" id="maxEnc" readonly>
+        </div>
+        <div class="total-enc">
+            <label>Total Enc:</label>
+            <input type="text" id="totalEnc" readonly>
         </div>
     </div>
-
-    <!-- Navigation Buttons -->
-    <div class="navigation-buttons">
-        <button onclick="showPage(1)">Page 1</button>
-        <button onclick="showPage(2)">Page 2</button>
-    </div>
-
-    <script src="script.js"></script>
+</div>
+</div>
 </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </html>
