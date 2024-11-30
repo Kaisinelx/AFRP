@@ -8,11 +8,6 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Page 1 -->
-    <div class="page" id="page-1">
-        <h1>Welcome to Page 1</h1>
-        <p>This is the first page content.</p>
-    </div>
     <!-- Main Content -->
         <div class="sheet-container">
                 <!-- Header -->
@@ -317,31 +312,19 @@
                             <input type="checkbox" class="secondary-checkbox" data-attr="pow">
                             <input type="checkbox" class="secondary-checkbox" data-attr="pow">
                             <input type="checkbox" class="secondary-checkbox" data-attr="pow">
-                            <input type="checkbox" class="secondary-checkbox" data-attr="pow">
-                            <input type="checkbox" class="secondary-checkbox" data-attr="pow">
                             <!-- Add more checkboxes as needed -->
                         </div>
                     </td>
                     <!-- Defense (def) -->
                     <td>
                         <div class="checkbox-group">
-                            <input type="checkbox" class="secondary-checkbox" data-attr="def">
-                            <input type="checkbox" class="secondary-checkbox" data-attr="def">
-                            <input type="checkbox" class="secondary-checkbox" data-attr="def">
-                            <input type="checkbox" class="secondary-checkbox" data-attr="def">
-                            <input type="checkbox" class="secondary-checkbox" data-attr="def">
-                            <input type="checkbox" class="secondary-checkbox" data-attr="def">
+                          
                             <!-- Add more checkboxes as needed -->
                         </div>
                     </td>
                     <!-- Movement (m) -->
                     <td>
                         <div class="checkbox-group">
-                            <input type="checkbox" class="secondary-checkbox" data-attr="m">
-                            <input type="checkbox" class="secondary-checkbox" data-attr="m">
-                            <input type="checkbox" class="secondary-checkbox" data-attr="m">
-                            <input type="checkbox" class="secondary-checkbox" data-attr="m">
-                            <input type="checkbox" class="secondary-checkbox" data-attr="m">
                             <input type="checkbox" class="secondary-checkbox" data-attr="m">
                             <!-- Add more checkboxes as needed -->
                         </div>
@@ -373,9 +356,6 @@
                      <!-- Fortune Points (fp) -->
                      <td>
                         <div class="checkbox-group">
-                            <input type="checkbox" class="secondary-checkbox" data-attr="fp">
-                            <input type="checkbox" class="secondary-checkbox" data-attr="fp">
-                            <input type="checkbox" class="secondary-checkbox" data-attr="fp">
                             <input type="checkbox" class="secondary-checkbox" data-attr="fp">
                             <input type="checkbox" class="secondary-checkbox" data-attr="fp">
                             <input type="checkbox" class="secondary-checkbox" data-attr="fp">
@@ -734,13 +714,10 @@
                     <th>Item</th>
                     <th>Quantity</th>
                     <th>Enc</th>
-                    <th>Item</th>
-                    <th>Quantity</th>
-                    <th>Enc</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Add 10 blank rows -->
+                <!-- Add blank rows -->
                 <tr>
                     <td contenteditable="true"></td>
                     <td contenteditable="true"></td>
@@ -752,41 +729,29 @@
                     <td contenteditable="true"></td>
                     <td contenteditable="true"></td>
                 </tr>
-                <!-- Repeat the above <tr> block 9 more times -->
-                    <tr>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                    </tr>
-                    <tr>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                    </tr>
-                    <tr>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                        <td contenteditable="true"></td>
-                    </tr>
-                <!-- ... -->
+                <!-- Repeat the above <tr> block as needed -->
+                <tr>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
+                <tr>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true"></td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -801,7 +766,279 @@
         </div>
     </div>
 </div>
+<div class="main-container">
+    <!-- Left Column -->
+    <div class="left-column">
+        <!-- Weapons Section -->
+        <div class="weapons-section">
+            <h3>Weapons</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Weapon</th>
+                        <th>Group</th>
+                        <th>Damage</th>
+                        <th>Range</th>
+                        <th>Reload</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="qualities-row">Qualities: None</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
+        <!-- Movement Section -->
+        <div class="movement-section">
+            <h3>Movement</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Move/Disengage</th>
+                        <th>Charge Attack</th>
+                        <th>Run</th>
+                        <th>Running Leap</th>
+                        <th>Standing Leap</th>
+                        <th>Flying</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" placeholder="Mx1"></td>
+                        <td><input type="text" placeholder="Mx2"></td>
+                        <td><input type="text" placeholder="Mx3"></td>
+                        <td><input type="text" placeholder="M+SB"></td>
+                        <td><input type="text" placeholder="M"></td>
+                        <td><input type="text" placeholder="M"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Money & Treasure Section -->
+        <div class="money-treasure-section">
+            <h3>Currency & Treasure</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kinah (Kh)</th>
+                        <th>Aether Shard (AS)</th>
+                        <th>Drana Crystal (DC)</th>
+                        <th>Silver Sigils (SS)</th>
+                        <th>Other Treasure</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" placeholder="Kinah"></td>
+                        <td><input type="text" placeholder="Shard"></td>
+                        <td><input type="text" placeholder="Crystal"></td>
+                        <td><input type="text" placeholder="Sigils"></td>
+                        <td><textarea placeholder="Describe your treasure here"></textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="right-column">
+        <!-- Armor Section -->
+        <div class="armour-section">
+            <h3>Armour</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Armour Type</th>
+                        <th>Locations Covered</th>
+                        <th>ENC</th>
+                        <th>AP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                        <td><input type="text" placeholder=></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    
+        <!-- Armour Points Diagram -->
+        <div class="armour-points-diagram">
+            <h3>Armour Points</h3>
+            <div class="diagram-container">
+                <img src="https://i.postimg.cc/Dw5Jzyc9/izgi-Film-izimi-removebg-preview.png" alt="Armour Diagram" class="armour-figure">
+    
+                <!-- Points -->
+                <div class="armour-point head">
+                    <label>Head</label>
+                    <input type="text" placeholder="0">
+                    <span>01-15</span>
+                </div>
+                <div class="armour-point left-arm">
+                    <label>Left Arm</label>
+                    <input type="text" placeholder="0">
+                    <span>36-55</span>
+                </div>
+                <div class="armour-point right-arm">
+                    <label>Right Arm</label>
+                    <input type="text" placeholder="0">
+                    <span>16-35</span>
+                </div>
+                <div class="armour-point body">
+                    <label>Body</label>
+                    <input type="text" placeholder="0">
+                    <span>56-80</span>
+                </div>
+                <div class="armour-point left-leg">
+                    <label>Left Leg</label>
+                    <input type="text" placeholder="0">
+                    <span>91-00</span>
+                </div>
+                <div class="armour-point right-leg">
+                    <label>Right Leg</label>
+                    <input type="text" placeholder="0">
+                    <span>81-90</span>
+                </div>
+                <div class="armour-point dodge-blow">
+                    <label>Dodge Blow</label>
+                    <input type="text" placeholder="0">
+                </div>
+            </div>
+        </div>
+    
+            <div class="action-summary-section">
+                <h3>Action Summary</h3>
+                <table>
+                    <tr>
+                        <th>Basic Action</th>
+                        <th>Type</th>
+                        <th>Advanced Action</th>
+                        <th>Type</th>
+                    </tr>
+                    <tr>
+                        <td>Aim</td>
+                        <td>Half</td>
+                        <td>All Out Attack</td>
+                        <td>Full</td>
+                    </tr>
+                    <tr>
+                        <td>Cast</td>
+                        <td>Varies</td>
+                        <td>Guarding Stance</td>
+                        <td>Full</td>
+                    </tr>
+                    <tr>
+                        <td>Charge</td>
+                        <td>Full</td>
+                        <td>Delay</td>
+                        <td>Half</td>
+                    </tr>
+                    <tr>
+                        <td>Disengage</td>
+                        <td>Full</td>
+                        <td>Feint</td>
+                        <td>Half</td>
+                    </tr>
+                    <tr>
+                        <td>Move</td>
+                        <td>Half</td>
+                        <td>Guarded Attack</td>
+                        <td>Full</td>
+                    </tr>
+                    <tr>
+                        <td>Reload</td>
+                        <td>Half</td>
+                        <td>Dodge Blow</td>
+                        <td>Reaction</td>
+                    </tr>
+                    <tr>
+                        <td>Fly</td>
+                        <td>Half</td>
+                        <td>Class Skills</td>
+                        <td>Half</td>
+                    </tr>
+                    <tr>
+                        <td>Swift Attack</td>
+                        <td>Full</td>
+                        <td>Maneouvre</td>
+                        <td>Half</td>
+                    </tr>
+                    <!-- Continue adding rows as needed -->
+                </table>
+            </div>
+        </div>
+        
 <!-- Include the script at the end of the body -->
 <script src="script.js"></script>
 </body>
